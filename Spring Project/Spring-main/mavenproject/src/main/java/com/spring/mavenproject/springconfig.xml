@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="emp" class="com.spring.mavenproject.Employee">
+		<property name="id">
+			<value>1</value>
+		</property>
+		<property name="name">
+			<value>John</value>
+		</property>
+
+	</bean>
+	<bean name="emp1" class="com.spring.mavenproject.Employee">
+		<property name="id" value="2">
+
+		</property>
+		<property name="name" value="James">
+
+		</property>
+
+	</bean>
+	<bean name="emp2" class="com.spring.mavenproject.Employee" p:id="3"
+		p:name="Jill">
+
+	</bean>
+	<bean name="emp4" class="com.spring.mavenproject.Employee" p:id="4"
+		p:name="Smith">
+		<property name="departments">
+			<list>
+				<value>HR</value>
+				<value>Admin</value>
+				<value>User</value>
+			</list>
+		</property>
+	</bean>
+	<bean name="emp5" class="com.spring.mavenproject.Employee" p:id="5"
+		p:name="Smith">
+		<property name="products">
+			<map>
+				<entry key="100" value="Laptop" />
+				<entry key="200" value="Phone" />
+			</map>
+		</property>
+	</bean>
+	<bean name="emp6" class="com.spring.mavenproject.Employee" p:id="6"
+		p:name="Smith">
+		<property name="countriesLanguages">
+			<props>
+				<prop key="USA">English</prop>
+				<prop key="Canada">English</prop>
+				<prop key="Japan">Japanese</prop>
+			</props>
+		</property>
+	</bean>
+	<bean name="address1" class="com.spring.mavenproject.Address" p:city="chennai" p:state="TN" p:pincode="503030" />
+	<bean name="emp7" class="com.spring.mavenproject.Employee" p:id="6"
+		p:name="Smith">
+		<property name="address">
+
+				<ref bean="address1" />
+
+		</property>
+	</bean>
+	<bean name="items" class="com.spring.mavenproject.Item" p:id="1" p:name="cup" p:price="100" p:quantity="3" />
+	<bean name="item1" class="com.spring.mavenproject.ShoppingCart" 
+		>
+		<property name="item">
+
+				<ref bean="items" />
+
+		</property>
+	</bean>
+</beans>
